@@ -1,0 +1,67 @@
+<span style="font-family:DFKai-sb,monospace;border:1px orange solid;margin-right:5px;">
+{% extends "base.html" %}
+{% block title %}Python-07{% endblock %}
+{% block headmessage %} <h1>第七組提供</h1>{% endblock %}
+{% block content %}
+<body style="background-color:#FFF2FF;">
+<h4>以下是台灣近五年各地月降雨量查詢</h4>
+<table class='table table-striped table-bordered text-center'>
+<tr style="background-color:#FFC9FF"><td>台灣地圖(點擊區域可查詢)
+	<tr><td rowspan="5">
+		<img src="https://i.imgur.com/1e0paJm.png" width="500" height="600" usemap="#ImageMap02">
+<map name="ImageMap02">
+
+<area shape="circle" coords="300,180,20"  href="/local_weather/7/"  title="台中">
+
+<area shape="circle" coords="360,105,20"  href="/local_weather/1/"  title="新竹">
+
+<area shape="circle" coords="320,140,20"  href="/local_weather/18/"  title="苗栗">
+
+<area shape="circle" coords="370,65,20" href="/local_weather/15/"  title="桃園">
+
+<area shape="circle" coords="430,75,16"  href="/local_weather/29/"  title="新北">
+
+<area shape="circle" coords="410,35,10"  href="/local_weather/21/"  title="台北">
+
+<area shape="circle" coords="450,30,10"  href="/local_weather/16/"  title="基隆">
+
+<area shape="circle" coords="425,120,20"  href="/local_weather/13/"  title="宜蘭">
+
+<area shape="circle" coords="390,270,22"  href="/local_weather/11/"  title="花蓮">
+
+<area shape="circle" coords="310,260,22"  href="/local_weather/8/"  title="南投">
+
+<area shape="circle" coords="220,235,18"  href="/local_weather/6/"  title="彰化">
+
+<area shape="circle" coords="210,280,18"  href="/local_weather/9/"  title="雲林">
+
+<area shape="circle" coords="75,300,20"  href="/local_weather/27/"  title="澎湖">
+
+<area shape="circle" coords="240,320,18"  href="/local_weather/24/"  title="嘉義">
+
+<area shape="circle" coords="190,375,20"  href="/local_weather/28/"  title="台南">
+
+<area shape="circle" coords="250,400,18"  href="/local_weather/19/"  title="高雄">
+
+<area shape="circle" coords="320,422,20"  href="/local_weather/17/"  title="台東">
+
+<area shape="circle" coords="250,500,20"  href="/local_weather/10/"  title="屏東">
+
+</map>
+	
+</table>
+<br>
+
+<h4>近期有關下雨的新聞</h4>
+<table class='table table-striped table-bordered', style="background-color:#FFC9FF;">>
+	<tr><td>標題</td><td>張貼日期</td></tr>
+{% for post in posts %}
+	<tr style="background-color:#FFF2FF">
+		<td><a href="/show/{{post.id}}/">{{ post.title }}</a></td>
+		<td>{{ post.pub_date }}</td>
+	</tr>
+{% endfor %}
+</table>
+{% endblock %}
+</body>
+</span>
